@@ -1,0 +1,24 @@
+<template>
+  
+  <h1>{{ title }}</h1>
+  <p>{{ description }}</p>
+
+  <ul>
+    <li v-for="name in names" :key="name">{{ name }}</li>
+  </ul>
+
+  <label for="">Number: {{ num }}</label>
+  <input type="text" v-model="num">
+
+</template>
+
+<script setup>
+
+import { ref } from 'vue';
+
+const title = ref('Vue App')
+const description = ref('This is the app that is developed by Vue.js.')
+const names = ref(['Bella Snow', 'Ella Snow', 'William', 'Jack'])
+const num = ref(100)
+
+</script>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS App</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <h1 id="title"></h1>
+    <p id="description"></p>
+
+    <ul id="names"></ul>
+
+    <label for="">Number: <span id="num"></span> </label>
+    <input type="text" id="numInput" onkeyup="updateNum(event)">
+    
+    
+    <script>
+
+        // title
+        const title = "JS App"
+        document.getElementById('title').innerHTML = title
+        
+        // description
+        const description = "This is the app that is developed by pure JavaScript."
+        document.getElementById('description').innerHTML = description
+
+        // names
+        const names = ['Bella Snow', 'Ella Snow', 'William', 'Jack']
+
+        for(let i = 0; i < names.length; i++) {
+            document.getElementById('names').innerHTML += `<li>${names[i]}</li>`
+        }
+
+        // input
+        var num = 100
+        document.getElementById('num').innerHTML = num
+
+        document.getElementById('numInput').value = num
+
+        function updateNum(e) {
+            num += e.target.value
+        }
+
+
+    </script>
+</body>
+</html>
+

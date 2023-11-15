@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue app</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        .text-success {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <h1 :class="color">{{ title }} </h1>
+
+    <ul>
+        <li v-for="name in names" :key="name">{{ name }}</li>
+    </ul>
+</div> 
+<script>       
+
+// import application instance and root component
+const { createApp, ref } = Vue
+
+// create vue app
+const app = createApp({
+    setup() {
+        const title = ref('vue app')
+        const color = ref('text-success')
+
+        const names = ref(['bella snow', 'ella snow', 'lisa', 'james', 'john doe'])
+
+        return { title, color, names }
+    }
+})
+
+// mount the root component
+app.mount('#app')
+
+</script>   
+    
+    
+</body>
+</html>

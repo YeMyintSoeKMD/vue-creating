@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue app</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <h1>{{ title }} </h1>
+
+    <input type="text" v-model="title">
+
+    <div v-html="aTag"></div>
+</div> 
+<script>   
+
+
+// import application instance and root component
+const { createApp, ref, reactive } = Vue
+
+// create vue app
+const app = createApp({
+    setup() {
+
+        const title = ref('Vue CDN App')
+
+        const aTag = ref('<a href="https//www.youtube.com">Link</a>')
+
+        return { title, aTag }
+    }
+})
+
+// mount the root component
+app.mount('#app')
+
+</script>  
+    
+    
+</body>
+</html>
